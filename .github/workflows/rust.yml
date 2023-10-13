@@ -23,7 +23,7 @@ jobs:
         node-version: 16
         cache: 'npm'
     - name: install wasm-pack
-      run: npm install -g wasm-pack
+      run: npm install -g wasm-pack@0.12.1
     - run: npm ci
     - run: npm test
     - run: npm run build
