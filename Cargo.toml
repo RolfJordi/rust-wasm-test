@@ -31,6 +31,9 @@ wasm-bindgen = "0.2.87"
 wee_alloc = { version = "0.4.5", optional = true }
 js-sys = "0.3.64"
 
+serde = { version = "1.0.80", features = ["derive"] }
+serde_derive = "^1.0.59"
+
 # The `web-sys` crate allows you to interact with the various browser APIs,
 # like the DOM.
 [dependencies.web-sys]
@@ -40,7 +43,12 @@ features = [
     'Document',
     'Element',
     'HtmlElement',
+    'Headers',
     'Node',
+    'Request',
+    'RequestInit',
+    'RequestMode',
+    'Response',
     'Window',
     'console',
 ]
