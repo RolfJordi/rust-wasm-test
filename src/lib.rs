@@ -21,7 +21,7 @@ fn run() -> Result<(), JsValue> {
     #[cfg(debug_assertions)]
     console_error_panic_hook::set_once();
 
-    console::log_1(&JsValue::from_str("Hello world!"));
+    console::log_1(&JsValue::from_str("starting!"));
 
     let window = web_sys::window().expect("should have a window in this context");
     let document = window.document().expect("window should have a document");
