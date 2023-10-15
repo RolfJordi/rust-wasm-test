@@ -1,7 +1,4 @@
 use wasm_bindgen::prelude::*;
-use web_sys::console;
-use js_sys::{Array, Date};
-use web_sys::{Document, Element, HtmlElement, Window};
 use std::ops::Add;
 use wasm_bindgen::Clamped;
 use web_sys::{CanvasRenderingContext2d, ImageData};
@@ -47,9 +44,13 @@ fn get_julia_set(width: u32, height: u32, c: Complex) -> Vec<u8> {
                 imaginary: x as f64 * scale - param_i,
             };
             let iter_index = get_iter_index(z, c);
+            //
             data.push((iter_index / 4) as u8);
+            //
             data.push((iter_index / 2) as u8);
+            //
             data.push(iter_index as u8);
+            //alpha
             data.push(255);
         }
     }
@@ -60,7 +61,7 @@ fn get_julia_set(width: u32, height: u32, c: Complex) -> Vec<u8> {
 fn get_iter_index(z: Complex, c: Complex) -> u32 {
     let mut iter_index: u32 = 0;
     let mut z = z;
-    while iter_index < 900 {
+    while iter_index < 1000 {
         if z.norm() > 2.0 {
             break;
         }
