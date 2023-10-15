@@ -1,9 +1,28 @@
 ## How to install
 
+
+it needs node 16.  
+
 ```sh
 npm install
 ```
 
+if any issue with installing wasm pack 
+```sh
+npm install wasm-pack@0.12.1
+```
+
+try with cargo 
+```sh
+cargo install wasm-pack@0.12.1
+```
+
+
+## TODO
+
+ *[] upgrade to webpack 5 
+ 
+  
 ## How to run in debug mode
 
 ```sh
