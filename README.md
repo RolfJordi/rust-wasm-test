@@ -1,3 +1,5 @@
+
+result is deployed [here](https://rolfjordi.github.io/rust-wasm-test/)
 ## How to install
 
 
@@ -20,9 +22,9 @@ cargo install wasm-pack@0.12.1
 
 ## TODO
 
- *[] upgrade to webpack 5 
- 
-  
+ -[] upgrade to webpack 5 (and node 18) 
+
+
 ## How to run in debug mode
 
 ```sh
