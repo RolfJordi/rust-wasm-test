@@ -7,7 +7,7 @@ use web_sys::{CanvasRenderingContext2d, ImageData};
 pub fn draw(
     ctx: &CanvasRenderingContext2d,
     width: u32,
-  height: u32,
+    height: u32,
     real: f64,
     imaginary: f64,
 ) -> Result<(), JsValue> {
