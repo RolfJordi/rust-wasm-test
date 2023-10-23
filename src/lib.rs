@@ -1,5 +1,5 @@
-use wasm_bindgen::prelude::*;
 use std::ops::Add;
+use wasm_bindgen::prelude::*;
 use wasm_bindgen::Clamped;
 use web_sys::{CanvasRenderingContext2d, ImageData};
 
