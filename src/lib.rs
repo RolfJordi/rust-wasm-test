@@ -3,6 +3,8 @@ use wasm_bindgen::prelude::*;
 use wasm_bindgen::Clamped;
 use web_sys::{CanvasRenderingContext2d, ImageData};
 
+
+
 #[wasm_bindgen]
 pub fn draw(
     ctx: &CanvasRenderingContext2d,
