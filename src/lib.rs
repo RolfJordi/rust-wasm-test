@@ -1,3 +1,4 @@
+use std::fmt;
 use std::ops::Add;
 use wasm_bindgen::prelude::*;
 use wasm_bindgen::Clamped;
@@ -65,6 +66,14 @@ struct Complex {
     imaginary: f64,
 }
 
+// Implement `Display` for `MinMax`.
+impl fmt::Display for Complex {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        // Use `self.number` to refer to each positional data point.
+        write!(f, "({}, {})", self.real, self.imaginary)
+    }
+}
+
 impl Complex {
     fn square(self) -> Complex {
         let real = (self.real * self.real) - (self.imaginary * self.imaginary);
@@ -84,5 +93,26 @@ impl Add<Complex> for Complex {
             real: self.real + rhs.real,
             imaginary: self.imaginary + rhs.imaginary,
         }
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    // Note this useful idiom: importing names from outer (for mod tests) scope.
+    use super::*;
+    #[test]
+    fn test_add() {
+        let c = Complex {
+            real: 1.0,
+            imaginary: 2.0,
+        };
+        let e = Complex {
+            real: 2.0,
+            imaginary: 4.0,
+        };
+
+        let r = c + c;
+        assert_eq!(r.real, e.real);
+        assert_eq!(r.imaginary, e.imaginary);
     }
 }
