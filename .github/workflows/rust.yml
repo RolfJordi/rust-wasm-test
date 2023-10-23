@@ -37,10 +37,10 @@ jobs:
       run: cargo test --verbose
     - uses: actions/setup-node@v3
       with:
-        node-version: 16
+        node-version: 20
         cache: 'npm'
-    - name: install wasm-pack
-      run: npm install -g wasm-pack@0.12.1
+#    - name: install wasm-pack
+#      run: npm install -g wasm-pack@0.12.1
     - run: npm ci
     - run: npm test
     - run: npm run build
