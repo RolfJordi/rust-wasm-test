@@ -31,16 +31,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-    - name: Build
+    - name: Build Rust
       run: cargo build --verbose
-    - name: Run tests
+    - name: Run Rust tests
       run: cargo test --verbose
     - uses: actions/setup-node@v3
       with:
         node-version: 20
         cache: 'npm'
-#    - name: install wasm-pack
-#      run: npm install -g wasm-pack@0.12.1
+    - name: install wasm-pack
+      run: npm install -g wasm-pack@1.7.0
     - run: npm ci
     - run: npm test
     - run: npm run build
