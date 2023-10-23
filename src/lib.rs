@@ -28,15 +28,15 @@ fn get_julia_set(width: u32, height: u32, c: Complex) -> Vec<u8> {
     for x in 0..width {
         for y in 0..height {
             let z = Complex {
-                real: y as f64 * scale - param_r,
-                imaginary: x as f64 * scale - param_i,
+                real: f64::from(y) * scale - param_r,
+                imaginary: f64::from(x) * scale - param_i,
             };
             let iter_index = get_iter_index(z, c);
-            //
+            #[allow(clippy::cast_possible_truncation)]
             data.push((iter_index / 4) as u8);
-            //
+            #[allow(clippy::cast_possible_truncation)]
             data.push((iter_index / 2) as u8);
-            //
+            #[allow(clippy::cast_possible_truncation)]
             data.push(iter_index as u8);
             //alpha
             data.push(255);
