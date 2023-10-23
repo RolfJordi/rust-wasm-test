@@ -115,4 +115,13 @@ mod tests {
         assert_eq!(r.real, e.real);
         assert_eq!(r.imaginary, e.imaginary);
     }
+
+    #[test]
+    fn test_display() {
+        let c = Complex {
+            real: 1.0,
+            imaginary: 2.0,
+        };
+        assert_eq!(c.to_string(), "(1, 2)")
+    }
 }
