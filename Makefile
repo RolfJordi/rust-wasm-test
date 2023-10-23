@@ -3,3 +3,6 @@ init:
 
 format:
 	cargo fmt --all
+
+start:
+	npm run start
